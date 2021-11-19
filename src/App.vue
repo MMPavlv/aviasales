@@ -1,12 +1,36 @@
 <template>
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </div>
-  <router-view/>
+  <header><div id="nav">
+    <router-link to="/">Билеты</router-link> |
+    <router-link to="/about">О нас</router-link>
+  </div></header>
+  
+  <router-view style="padding-bottom:50px;"/>
+  <Footer id="footer"></Footer>
 </template>
 
+<script>
+import Footer from '@/components/Footer.vue'
+
+export default {
+  components: {
+    Footer,
+  }
+}
+</script>
+
+
 <style>
+
+header {
+  background-color: #42b983;
+}
+
+#footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -25,6 +49,7 @@
 }
 
 #nav a.router-link-exact-active {
-  color: #42b983;
+  color: white;
 }
+
 </style>
